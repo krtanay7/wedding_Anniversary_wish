@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy 24th Anniversary – Nalin & Jyoti Sinha</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Dancing+Script:wght@400;700&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Surprise intro -->
+  <div class="intro-screen" id="introScreen" aria-label="Anniversary surprise intro">
+    <div class="intro-particles" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="intro-card">
+      <p class="intro-kicker">Something Beautiful Awaits ❤️</p>
+      <h1>🎁 A Special Surprise 🎁</h1>
+      <p class="intro-dedication">With love,<br>Your Son Tanay</p>
+      <button class="intro-btn" id="openSurpriseBtn" type="button">
+        <span>Open Surprise</span>
+        <span class="intro-btn-heart">❤️</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Custom cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
+
+  <!-- Floating hearts background layer -->
+  <canvas id="heartCanvas"></canvas>
+
+  <!-- Confetti canvas -->
+  <canvas id="confettiCanvas"></canvas>
+
+  <!-- Fireworks canvas -->
+  <canvas id="fireworksCanvas"></canvas>
+
+  <!-- Music toggle -->
+  <button class="music-btn" id="musicBtn" aria-label="Toggle Music">
+    <span class="music-icon">♪</span>
+    <span class="music-label">Music</span>
+  </button>
+  <audio id="bgMusic" loop>
+    <source src="music/romantic.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-overlay"></div>
+    <div class="stars-layer" id="starsLayer"></div>
+    <div class="rose-petals-layer" id="rosePetals"></div>
+
+    <div class="hero-content">
+      <div class="monogram" data-tilt>
+        <span>Nalin</span><span class="heart-mono">❤</span><span>Jyoti</span>
+      </div>
+      <p class="occasion-label reveal-fade">— with love —</p>
+      <h1 class="hero-title reveal-fade delay-1">
+        Happy <span class="gold-text">24<sup>th</sup></span><br>
+        <span class="script-text">Marriage Anniversary</span>
+      </h1>
+      <div class="couple-names reveal-fade delay-2">
+        <span class="name-text" id="typedNames"></span>
+      </div>
+      <div class="heart-pulse reveal-fade delay-3">
+        <div class="heart-icon">❤</div>
+        <div class="ripple r1"></div>
+        <div class="ripple r2"></div>
+        <div class="ripple r3"></div>
+      </div>
+      <p class="tagline reveal-fade delay-4">24 Years of Love, Laughter & Lifelong Togetherness</p>
+      <a href="#gallery" class="scroll-cta reveal-fade delay-5">
+        <span>Explore Our Story</span>
+        <span class="arrow-down">↓</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ========== PHOTO GALLERY ========== -->
+  <section class="gallery-section" id="gallery">
+    <div class="section-header">
+      <p class="section-sub">Our Cherished Moments</p>
+      <h2 class="section-title">A Lifetime of <span class="gold-text">Memories</span></h2>
+      <div class="divider-heart">❤</div>
+    </div>
+
+    <!-- Carousel -->
+    <div class="carousel-wrap">
+      <div class="carousel" id="carousel"></div>
+      <button class="carousel-btn prev" id="prevBtn">&#8249;</button>
+      <button class="carousel-btn next" id="nextBtn">&#8250;</button>
+      <div class="carousel-dots" id="carouselDots"></div>
+    </div>
+
+    <!-- Masonry Grid -->
+    <div class="photo-grid" id="photoGrid"></div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">✕</button>
+    <img id="lightboxImg" src="" alt=""/>
+    <button class="lightbox-prev" id="lightboxPrev">&#8249;</button>
+    <button class="lightbox-next" id="lightboxNext">&#8250;</button>
+  </div>
+
+  <!-- ========== LOVE JOURNEY TIMELINE ========== -->
+  <section class="timeline-section" id="timeline">
+    <div class="section-header">
+      <p class="section-sub">Our Story</p>
+      <h2 class="section-title">Love <span class="gold-text">Journey</span></h2>
+      <div class="divider-heart">❤</div>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item left scroll-reveal">
+        <div class="timeline-card" data-tilt>
+          <div class="timeline-icon">💍</div>
+          <h3>2002</h3>
+          <h4>The Sacred Union</h4>
+          <p>Two hearts became one in a beautiful ceremony surrounded by family and blessings.</p>
+        </div>
+      </div>
+      <div class="timeline-item right scroll-reveal">
+        <div class="timeline-card" data-tilt>
+          <div class="timeline-icon">👶</div>
+          <h3>2004</h3>
+          <h4>Family Grows</h4>
+          <p>The most precious gift arrived, making their love story even more beautiful.</p>
+        </div>
+      </div>
+      <div class="timeline-item left scroll-reveal">
+        <div class="timeline-card" data-tilt>
+          <div class="timeline-icon">✈️</div>
+          <h3>2011</h3>
+          <h4>Adventures Together</h4>
+          <p>Exploring the world hand-in-hand, creating memories that last forever.</p>
+        </div>
+      </div>
+      <div class="timeline-item right scroll-reveal">
+        <div class="timeline-card" data-tilt>
+          <div class="timeline-icon">🌟</div>
+          <h3>2016</h3>
+          <h4>Silver Beginnings</h4>
+          <p>15 years of unwavering support, deep trust and growing stronger together.</p>
+        </div>
+      </div>
+      <div class="timeline-item left scroll-reveal">
+        <div class="timeline-card" data-tilt>
+          <div class="timeline-icon">💛</div>
+          <h3>2026</h3>
+          <h4>24 Golden Years</h4>
+          <p>24 years of love that continues to bloom like the first day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SPECIAL MESSAGE ========== -->
+  <section class="message-section" id="message">
+    <div class="message-bg-shapes"></div>
+    <div class="message-card" data-tilt>
+      <div class="message-hearts-float" id="msgHearts"></div>
+      <div class="quote-mark">"</div>
+      <p class="message-text" id="messageText"></p>
+      <div class="quote-mark close">"</div>
+      <div class="message-signature">
+        <span>With All Our Love</span>
+        <div class="sig-divider">❤</div>
+        <span class="sig-names">Nalin Kumar Sinha & Jyoti Sinha</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== COUNTDOWN TIMER ========== -->
+  <section class="countdown-section" id="countdown">
+    <div class="section-header">
+      <p class="section-sub">Celebrating</p>
+      <h2 class="section-title"><span class="gold-text">24 Years</span> Together</h2>
+      <div class="divider-heart">❤</div>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card scroll-reveal">
+        <div class="stat-num" data-count="8766">0</div>
+        <div class="stat-label">Days Together</div>
+      </div>
+      <div class="stat-card scroll-reveal">
+        <div class="stat-num" data-count="210384">0</div>
+        <div class="stat-label">Hours of Love</div>
+      </div>
+      <div class="stat-card scroll-reveal">
+        <div class="stat-num" data-count="288">0</div>
+        <div class="stat-label">Months of Togetherness</div>
+      </div>
+      <div class="stat-card scroll-reveal">
+        <div class="stat-num" data-count="24">0</div>
+        <div class="stat-label">Beautiful Years</div>
+      </div>
+    </div>
+
+    <!-- Next anniversary countdown -->
+    <div class="next-anniversary">
+      <p class="next-label">Next Anniversary Countdown</p>
+      <div class="timer" id="timer">
+        <div class="time-block"><span id="tDays">--</span><small>Days</small></div>
+        <div class="time-sep">:</div>
+        <div class="time-block"><span id="tHours">--</span><small>Hours</small></div>
+        <div class="time-sep">:</div>
+        <div class="time-block"><span id="tMins">--</span><small>Mins</small></div>
+        <div class="time-sep">:</div>
+        <div class="time-block"><span id="tSecs">--</span><small>Secs</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== QUOTE SLIDER ========== -->
+  <section class="quotes-section" id="quotes">
+    <div class="quotes-inner">
+      <div class="quotes-slider" id="quotesSlider">
+        <div class="quote-slide active">
+          <p>"A great marriage is not when the 'perfect couple' comes together. It is when an imperfect couple learns to enjoy their differences."</p>
+          <span>— Dave Meurer</span>
+        </div>
+        <div class="quote-slide">
+          <p>"The best thing to hold onto in life is each other."</p>
+          <span>— Audrey Hepburn</span>
+        </div>
+        <div class="quote-slide">
+          <p>"In all the world, there is no heart for me like yours. In all the world, there is no love for you like mine."</p>
+          <span>— Maya Angelou</span>
+        </div>
+        <div class="quote-slide">
+          <p>"Whatever our souls are made of, his and hers are the same."</p>
+          <span>— Emily Brontë</span>
+        </div>
+        <div class="quote-slide">
+          <p>"To love and be loved is to feel the sun from both sides."</p>
+          <span>— David Viscott</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== INTERACTIVE HEART BUTTON ========== -->
+  <section class="interactive-section">
+    <div class="interact-text">
+      <p class="section-sub">Send Love</p>
+      <h2 class="section-title">Spread the <span class="gold-text">Love</span></h2>
+    </div>
+    <button class="explode-btn" id="explodeBtn">
+      <span class="btn-heart">❤</span>
+      <span>Send Love</span>
+    </button>
+    <div class="explode-hearts" id="explodeHearts"></div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="footer-monogram">Nalin ❤ Jyoti</div>
+    <p class="footer-names">Nalin Kumar Sinha & Jyoti Sinha</p>
+    <p class="footer-dedication">With love,<br>Your Son Tanay</p>
+    <p class="footer-anni">Happy 24th Marriage Anniversary 💖</p>
+    <p class="footer-year">2002 – 2026 · Forever & Always</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
